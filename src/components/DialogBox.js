@@ -6,9 +6,16 @@ const DialogBox = (props) => {
 
     const handleKeydown = (ev) => {
         if (ev.key === 'Escape') {
-            setIsVisable(false)
+            hideDialog()
         };
     }
+
+    const hideDialog = () => {
+        setIsVisable(false)
+    }
+
+    // DELETE STYLING
+    const visualOverlayStyle = {height: '100vh', width: '100vw', backgroundColor: '#00000085', position: 'fixed', top: 0, left: 0}
 
     useEffect(() => {
         document.addEventListener("keydown", handleKeydown);
@@ -20,7 +27,7 @@ const DialogBox = (props) => {
     return ReactDOM.createPortal(
         <>
             {isVisable && <>
-            <div className="visual-overlay"></div>
+            <div className="visual-overlay" onClick={hideDialog} style={visualOverlayStyle}></div>
             <dialog style={{ display: 'block' }}>
                 <div role="document">
                     {props.children}
