@@ -12,7 +12,6 @@ const DialogBox = (props) => {
 
     useEffect(() => {
         document.addEventListener("keydown", handleKeydown);
-
         return () => {
             document.removeEventListener("keydown", handleKeydown);
         };
@@ -20,12 +19,14 @@ const DialogBox = (props) => {
 
     return ReactDOM.createPortal(
         <>
+            {isVisable && <>
             <div className="visual-overlay"></div>
-            <dialog style={{ display: isVisable ? 'block': 'none'}}>
+            <dialog style={{ display: 'block' }}>
                 <div role="document">
                     {props.children}
                 </div>
             </dialog>
+            </>}
         </>,
         document.getElementById('dialogPlaceholder')
     )
