@@ -3,23 +3,26 @@ import DialogBox from '../components/DialogBox'
 
 class MainContent extends Component {
     state = {
-        isModalOpen: false
+        isDialogOpen: false
     }
 
-    openDialog = () => {
-        this.setState({ isModalOpen: true })
+    setDialogIsOpen = (isOpen) => {
+        this.setState({ isDialogOpen: isOpen })
     }
 
     render() {
-        const { isModalOpen } = this.state
+        const { isDialogOpen } = this.state
         return (
             <section className="main-content">
                 <h1>Welcome to the app</h1>
-                <button onClick={this.openDialog}>Open dialog</button>
-                {isModalOpen && 
-                <DialogBox>
-                    <h2>I am inside the slot</h2>
-                </DialogBox>}
+                <button onClick={() => this.setDialogIsOpen(true)}>Open dialog</button>
+                {isDialogOpen &&
+                    <DialogBox
+                        className="modal"
+                        isDialogOpen={isDialogOpen}
+                        onClose={() => this.setDialogIsOpen(false)}>
+                        <h2>I am inside the slot</h2>
+                    </DialogBox>}
             </section >
         )
     }
