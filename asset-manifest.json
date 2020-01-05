@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/dialog-proj/static/js/main.4a0b6593.chunk.js",
-    "main.js.map": "/dialog-proj/static/js/main.4a0b6593.chunk.js.map",
+    "main.js": "/dialog-proj/static/js/main.26cc9232.chunk.js",
+    "main.js.map": "/dialog-proj/static/js/main.26cc9232.chunk.js.map",
     "runtime-main.js": "/dialog-proj/static/js/runtime-main.3fce10e5.js",
     "runtime-main.js.map": "/dialog-proj/static/js/runtime-main.3fce10e5.js.map",
-    "static/js/2.0ad8d0c9.chunk.js": "/dialog-proj/static/js/2.0ad8d0c9.chunk.js",
-    "static/js/2.0ad8d0c9.chunk.js.map": "/dialog-proj/static/js/2.0ad8d0c9.chunk.js.map",
+    "static/js/2.b818d598.chunk.js": "/dialog-proj/static/js/2.b818d598.chunk.js",
+    "static/js/2.b818d598.chunk.js.map": "/dialog-proj/static/js/2.b818d598.chunk.js.map",
     "index.html": "/dialog-proj/index.html",
-    "precache-manifest.73c8906c2132be3e6ac41470effcea90.js": "/dialog-proj/precache-manifest.73c8906c2132be3e6ac41470effcea90.js",
+    "precache-manifest.5350185af96a8d9998a041c38db6a874.js": "/dialog-proj/precache-manifest.5350185af96a8d9998a041c38db6a874.js",
     "service-worker.js": "/dialog-proj/service-worker.js",
-    "static/js/2.0ad8d0c9.chunk.js.LICENSE": "/dialog-proj/static/js/2.0ad8d0c9.chunk.js.LICENSE"
+    "static/js/2.b818d598.chunk.js.LICENSE": "/dialog-proj/static/js/2.b818d598.chunk.js.LICENSE"
   },
   "entrypoints": [
     "static/js/runtime-main.3fce10e5.js",
-    "static/js/2.0ad8d0c9.chunk.js",
-    "static/js/main.4a0b6593.chunk.js"
+    "static/js/2.b818d598.chunk.js",
+    "static/js/main.26cc9232.chunk.js"
   ]
 }
