@@ -5,7 +5,7 @@ import MainContent from './views/MainContent';
 function App() {
   return (
     <div className="App">
-      <MainContent></MainContent>
+      <MainContent />
     </div>
   );
 }

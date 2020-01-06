@@ -13,8 +13,11 @@ const DialogBox = (props) => {
     }
 
     useEffect(() => {
+        const contentEls = document.querySelectorAll('body > div:not(#dialogPlaceholder)')
+        contentEls.forEach(el => el.setAttribute('aria-hidden', true))
         document.addEventListener("keydown", handleKeydown);
         return () => {
+            contentEls.forEach(el => el.setAttribute('aria-hidden', false))
             document.removeEventListener("keydown", handleKeydown);
         };
     });
