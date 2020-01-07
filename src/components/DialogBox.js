@@ -18,7 +18,7 @@ const DialogBox = (props) => {
     });
 
     const handleKeydown = ({ key }) => {
-        if (key === 'Escape') return hideDialog();
+        if (key === 'Escape') hideDialog();
     }
 
     const hideDialog = () => {

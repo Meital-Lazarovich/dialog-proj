@@ -3,11 +3,29 @@ import DialogBox from '../components/DialogBox'
 
 class MainContent extends Component {
     state = {
+        isModalOpen: false,
         isDialogOpen: false
     }
 
-    setDialogIsOpen = (isOpen) => {
-        this.setState({ isDialogOpen: isOpen })
+    setModalIsOpen = (isOpen) => {
+        this.setState({ isModalOpen: isOpen })
+    }
+
+    openDialog = () => {
+        this.setState({ isDialogOpen: true })
+        setTimeout(() => this.setState({ isDialogOpen: false }), 2000)
+    }
+
+    closeDialog = () => {
+        this.setState({ isDialogOpen: false })
+    }
+
+    getRandomNiceText = () => {
+        const randomNum = Math.random();
+        if (randomNum > 0.75) return 'Have a great day!'
+        else if (randomNum > 0.5) return 'Hope you will have a wonderful week'
+        else if (randomNum > 0.25) return 'What a lovely afternoon!'
+        else return 'This day is going to be amazing!'
     }
 
     modalStyle = {
@@ -25,28 +43,35 @@ class MainContent extends Component {
     }
 
     render() {
-        const { isDialogOpen } = this.state
+        const { isModalOpen, isDialogOpen } = this.state
         return (
             <section className="main-content">
                 <h1>Welcome to the app</h1>
-                <button>Just a button</button>
-                <button onClick={() => this.setDialogIsOpen(true)}>Open dialog</button>
-                {isDialogOpen &&
+                <nav>
+                    <button onClick={() => this.setModalIsOpen(true)}>Open the main modal</button>
+                    <button onClick={() => this.openDialog()}>Tell me something nice</button>
+                </nav>
+                {isModalOpen &&
                     <DialogBox
                         // The styling can be controlled by passing a className
                         // that has it's own style, or by passing a style object:
                         className="modal"
                         // style={this.modalStyle}
 
-                        isDialogOpen={isDialogOpen}
-                        onClose={() => this.setDialogIsOpen(false)}>
-                        <h2>I am inside the slot</h2>
-                        <button onClick={() => console.log('clickeddd')}>I'm working</button>
-                        <button disabled>I'm disabled</button>
-                        <button onClick={() => this.setDialogIsOpen(false)}>Close modal</button>
-                        <a href="https://www.w3schools.com">click me</a>
+                        onClose={() => this.setModalIsOpen(false)}>
+                        <a target='/blank' href="https://www.haaretz.co.il/"
+                            onClick={() => this.setModalIsOpen(false)}>
+                            Read the newspaper
+                        </a>
+                        <button onClick={() => this.setModalIsOpen(false)}>Close modal</button>
                     </DialogBox>}
-                <button>Just a button</button>
+                {isDialogOpen &&
+                    <DialogBox
+                        className="small-dialog"
+                        onClose={() => this.closeDialog()}>
+                        <button onClick={() => this.closeDialog()}>X</button>
+                        <h3>{this.getRandomNiceText()}</h3>
+                    </DialogBox>}
             </section >
         )
     }

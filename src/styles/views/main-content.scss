@@ -1,0 +1,21 @@
+.main-content {
+    text-align: center;
+    margin-top: 70px;
+    h1 {
+        margin-bottom: 46px;
+        color: $clr3;
+        font-size: 1.7em;
+    }
+    nav {
+        display: flex;
+        margin: 0 auto;
+        width: 420px;
+        justify-content: space-between;
+        align-items: center;
+        button {
+            padding: 10px;
+            font-size: 1em;
+            width: 190px;
+        }
+    }
+}
